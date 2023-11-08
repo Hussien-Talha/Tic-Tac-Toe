@@ -10,8 +10,8 @@ function makeMove(cell) {
 
     if (checkWinner()) {
       gameOver = true;
-      const winner = currentPlayer === 'X' ? 'O' : 'X'; // Fix to display the correct winner
-      document.getElementById('message').innerText = `${winner} wins!`;
+      const winner = currentPlayer === 'X' ? 'O' : 'X'; // Swap 'X' and 'O' here
+      document.getElementById('message').innerText = `${winner} Wins!`;
     } else if ([...document.getElementsByClassName('cell')].every(cell => cell.innerText !== '')) {
       gameOver = true;
       document.getElementById('message').innerText = "It's a draw!";
