@@ -2,7 +2,7 @@
 let currentPlayer = 'X';
 let gameOver = false;
 
-const clickSound = new Audio('click.mp3'); // Move it here to create the audio object
+const clickSound = new Audio('click.mp3');
 
 function makeMove(cell) {
   if (cell.innerText === '' && !gameOver) {
@@ -10,17 +10,29 @@ function makeMove(cell) {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     document.getElementById('message').innerText = `It's ${currentPlayer}'s turn`;
 
-    clickSound.play(); // Play the click sound here
+    clickSound.play();
 
     if (checkWinner()) {
       gameOver = true;
       const winner = currentPlayer === 'X' ? 'O' : 'X';
       document.getElementById('message').innerText = `${winner} Wins!`;
+      setTimeout(resetGame, 5000); // Wait for 5 seconds and reset the game
     } else if ([...document.getElementsByClassName('cell')].every(cell => cell.innerText !== '')) {
       gameOver = true;
       document.getElementById('message').innerText = "It's a draw!";
+      setTimeout(resetGame, 5000); // Wait for 5 seconds and reset the game
     }
   }
+}
+
+function resetGame() {
+  // Reset cells and message
+  [...document.getElementsByClassName('cell')].forEach(cell => (cell.innerText = ''));
+  document.getElementById('message').innerText = `It's X's turn`;
+
+  // Reset game variables
+  currentPlayer = 'X';
+  gameOver = false;
 }
 
 function checkWinner() {
