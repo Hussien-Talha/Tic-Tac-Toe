@@ -58,3 +58,15 @@ function checkWinner() {
   }
   return false;
 }
+
+// script.js in Game.html
+document.addEventListener('DOMContentLoaded', function() {
+  const audio = document.getElementById('gameMusic');
+  
+  // Check if there's a stored audio time
+  const storedTime = localStorage.getItem('audioTime');
+  if (storedTime) {
+    audio.currentTime = parseFloat(storedTime);
+    audio.play();
+  }
+});
