@@ -2,15 +2,19 @@
 let currentPlayer = 'X';
 let gameOver = false;
 
+const clickSound = new Audio('click.mp3'); // Move it here to create the audio object
+
 function makeMove(cell) {
   if (cell.innerText === '' && !gameOver) {
     cell.innerText = currentPlayer;
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     document.getElementById('message').innerText = `It's ${currentPlayer}'s turn`;
 
+    clickSound.play(); // Play the click sound here
+
     if (checkWinner()) {
       gameOver = true;
-      const winner = currentPlayer === 'X' ? 'O' : 'X'; // Swap 'X' and 'O' here
+      const winner = currentPlayer === 'X' ? 'O' : 'X';
       document.getElementById('message').innerText = `${winner} Wins!`;
     } else if ([...document.getElementsByClassName('cell')].every(cell => cell.innerText !== '')) {
       gameOver = true;
