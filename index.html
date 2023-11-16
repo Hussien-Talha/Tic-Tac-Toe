@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic-Tac-Toe Title Screen</title>
+  <title>Welcome to Tic-Tac-Toe!</title>
   <style>
     body {
       display: flex;
@@ -11,33 +11,45 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #282c35; /* Night mode activated */
-      color: #fff;
-      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #ffcc66, #ff6666); /* Gradient for a cheerful look */
+      color: #333;
+      font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans for a friendly feel */
       text-align: center;
+      overflow: hidden; /* Hide overflowing content */
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 4em;
       margin-bottom: 20px;
+      animation: bounce 1s infinite alternate; /* Add a bouncing animation */
     }
 
     button {
-      padding: 10px 20px;
-      font-size: 1.5em;
+      padding: 15px 25px;
+      font-size: 1.8em;
       cursor: pointer;
-      background-color: #4CAF50; /* Green */
+      background-color: #ff6666; /* Coral color for the button */
       border: none;
       color: white;
-      border-radius: 5px;
+      border-radius: 8px;
       text-decoration: none;
+      transition: background-color 0.3s ease; /* Smooth color transition */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* A subtle shadow for the button */
+    }
+
+    button:hover {
+      background-color: #ff4747; /* Darker coral on hover */
+    }
+
+    #musicButton:hover {
+      background-color: #ff4747; /* Darker coral on hover */
     }
 
     #musicButton {
       position: fixed;
       bottom: 10px;
       left: 10px;
-      background-color: #4CAF50; /* Green */
+      background-color: #ff6666; /* Coral color for the music button */
       border: none;
       color: white;
       padding: 10px 20px;
@@ -48,12 +60,21 @@
       border-radius: 50%;
       cursor: pointer;
     }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-10px);
+      }
+    }
   </style>
 </head>
 <body>
   <div>
     <h1>Welcome to Tic-Tac-Toe!</h1>
-    <button onclick="startGame()">Start Game</button>
+    <button onclick="startGame()">Let's Play!</button>
   </div>
 
   <audio id="gameMusic" src="Game-music.mp3" loop style="display:none;"></audio>
@@ -63,31 +84,30 @@
   <script>
     var musicPlaying = false;
 
-function toggleMusic() {
-  var audio = document.getElementById('gameMusic');
+    function toggleMusic() {
+      var audio = document.getElementById('gameMusic');
   
-  if (musicPlaying) {
-    audio.pause();
-  } else {
-    audio.play();
-  }
+      if (musicPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
   
-  musicPlaying = !musicPlaying;
-}
+      musicPlaying = !musicPlaying;
+    }
 
-function startGame() {
-  var audio = document.getElementById('gameMusic');
-  audio.play();
+    function startGame() {
+      var audio = document.getElementById('gameMusic');
+      audio.play();
 
-  // Store the current time of the audio
-  localStorage.setItem('audioTime', audio.currentTime);
+      // Store the current time of the audio
+      localStorage.setItem('audioTime', audio.currentTime);
 
-  // Navigate to Game.html after a short delay
-  setTimeout(() => {
-    window.location.href = 'Game.html';
-  }, 500);
-}
-
+      // Navigate to Game.html after a short delay
+      setTimeout(() => {
+        window.location.href = 'Game.html';
+      }, 500);
+    }
   </script>
 </body>
 </html>
