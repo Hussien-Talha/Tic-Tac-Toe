@@ -70,3 +70,17 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.play();
   }
 });
+
+var musicPlaying = false;
+
+function toggleMusic() {
+  var audio = document.getElementById('gameMusic');
+  
+  if (musicPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+  
+  musicPlaying = !musicPlaying;
+}

@@ -46,3 +46,19 @@ body {
     transform: translateY(10px);
   }
 }
+
+#musicButton {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+  border-radius: 50%;
+  cursor: pointer;
+}
