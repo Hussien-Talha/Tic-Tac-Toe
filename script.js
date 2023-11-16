@@ -3,6 +3,7 @@ let currentPlayer = 'X';
 let gameOver = false;
 
 const clickSound = new Audio('click.mp3');
+const congratulationsSound = new Audio('Congratulations.mp3'); // Add this line
 
 function makeMove(cell) {
   if (cell.innerText === '' && !gameOver) {
@@ -16,11 +17,12 @@ function makeMove(cell) {
       gameOver = true;
       const winner = currentPlayer === 'X' ? 'O' : 'X';
       document.getElementById('message').innerText = `${winner} Wins!`;
-      setTimeout(resetGame, 5000); // Wait for 5 seconds and reset the game
+      congratulationsSound.play(); // Play Congratulations.mp3
+      setTimeout(resetGame, 5000);
     } else if ([...document.getElementsByClassName('cell')].every(cell => cell.innerText !== '')) {
       gameOver = true;
       document.getElementById('message').innerText = "It's a draw!";
-      setTimeout(resetGame, 5000); // Wait for 5 seconds and reset the game
+      setTimeout(resetGame, 5000);
     }
   }
 }
