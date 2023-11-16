@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe Title Screen</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #282c35; /* Night mode activated */
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.5em;
+      cursor: pointer;
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    #musicButton {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.5em;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Welcome to Tic-Tac-Toe!</h1>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <audio id="gameMusic" src="Game-music.mp3" loop style="display:none;"></audio>
+
+  <button id="musicButton" onclick="toggleMusic()">🎵</button>
+
+  <script>
+    var musicPlaying = false;
+
+function toggleMusic() {
+  var audio = document.getElementById('gameMusic');
+  
+  if (musicPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+  
+  musicPlaying = !musicPlaying;
+}
+
+function startGame() {
+  var audio = document.getElementById('gameMusic');
+  audio.play();
+
+  // Store the current time of the audio
+  localStorage.setItem('audioTime', audio.currentTime);
+
+  // Navigate to Game.html after a short delay
+  setTimeout(() => {
+    window.location.href = 'Game2.html';
+  }, 500);
+}
+
+  </script>
+</body>
+</html>

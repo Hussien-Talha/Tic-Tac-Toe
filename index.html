@@ -69,6 +69,39 @@
         transform: translateY(-10px);
       }
     }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    /* Add a style for the overlay background */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    /* Style for the buttons inside the popup */
+    .popup button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      margin: 5px;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
@@ -80,6 +113,15 @@
   <audio id="gameMusic" src="Game-music.mp3" loop style="display:none;"></audio>
 
   <button id="musicButton" onclick="toggleMusic()">🎵</button>
+
+  <div id="popup" class="popup">
+    <p>Choose your version:</p>
+    <button onclick="chooseVersion('bright')">Bright</button>
+    <button onclick="chooseVersion('dull')">Dull</button>
+  </div>
+
+  <!-- Overlay background -->
+  <div id="overlay" class="overlay"></div>
 
   <script>
     var musicPlaying = false;
@@ -107,6 +149,28 @@
       setTimeout(() => {
         window.location.href = 'Game.html';
       }, 500);
+    }
+
+    // Add this script to show the popup on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      showPopup();
+    });
+
+    function showPopup() {
+      // Show the popup and overlay
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function chooseVersion(version) {
+      if (version === 'bright') {
+        // If "bright" is chosen, close the popup and overlay
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+      } else if (version === 'dull') {
+        // If "dull" is chosen, redirect to index2.html
+        window.location.href = 'index2.html';
+      }
     }
   </script>
 </body>
