@@ -9,6 +9,8 @@ body {
   padding: 10px;
   background-color: #282c35; /* Night mode activated */
   color: #fff; /* White text for that extra cool vibe */
+  max-width: 600px; /* Adjust as needed */
+  margin: auto; /* Center on larger screens */
 }
 
 .cell {
