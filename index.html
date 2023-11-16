@@ -32,6 +32,22 @@
       border-radius: 5px;
       text-decoration: none;
     }
+
+    #musicButton {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.5em;
+      border-radius: 50%;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -42,11 +58,23 @@
 
   <audio id="gameMusic" src="Game-music.mp3" loop style="display:none;"></audio>
 
+  <button id="musicButton" onclick="toggleMusic()">🎵</button>
+
   <script>
-     // Play the music once the page is fully loaded
-    window.onload = function() {
-      document.getElementById('gameMusic').play();
-    };
+    var musicPlaying = false;
+
+function toggleMusic() {
+  var audio = document.getElementById('gameMusic');
+  
+  if (musicPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+  
+  musicPlaying = !musicPlaying;
+}
+
     function startGame() {
       window.location.href = 'Game.html';
     }
