@@ -43,8 +43,11 @@
   <audio id="gameMusic" src="Game-music.mp3" loop style="display:none;"></audio>
 
   <script>
-    function startGame() {
+     // Play the music once the page is fully loaded
+    window.onload = function() {
       document.getElementById('gameMusic').play();
+    };
+    function startGame() {
       window.location.href = 'Game.html';
     }
   </script>
