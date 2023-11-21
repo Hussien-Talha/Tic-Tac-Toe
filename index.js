@@ -24,11 +24,6 @@ var musicPlaying = false;
       }, 500);
     }
 
-    // Add this script to show the popup on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      showPopup();
-    });
-
     function showPopup() {
       // Show the popup and overlay
       document.getElementById('popup').style.display = 'block';
@@ -55,3 +50,7 @@ function changeStyle() {
   const styleLink = document.getElementById('gameStyle');
   styleLink.href = styleLink.href === 'index.css' ? 'index2.css' : 'index.css';
 }
+
+function Website() {
+    window.location.href = "https://hussientalha.com"; // Make sure to include the protocol (http:// or https://)
+  }
