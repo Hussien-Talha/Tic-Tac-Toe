@@ -14,7 +14,6 @@ var musicPlaying = false;
 
     function startGame() {
       var audio = document.getElementById('gameMusic');
-      audio.play();
 
       // Store the current time of the audio
       localStorage.setItem('audioTime', audio.currentTime);
