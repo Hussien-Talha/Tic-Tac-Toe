@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Tic-Tac-Toe</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" id="gameStyle" href="style.css">
 </head>
 <body>
   <h1>Tic-Tac-Toe</h1>
@@ -30,6 +30,29 @@
   <audio id="gameMusic" src="Game-music.mp3" loop style="display:none;"></audio>
 
   <button id="musicButton" onclick="toggleMusic()">🎵</button>
+
+  <button id="settingsButton" onclick="toggleSettings()">⚙️</button>
+
+  <div id="settingsPopup" class="settings-popup">
+    <div class="settings-option" onclick="toggleStyle()">Change Style</div>
+    <!-- Add more settings options as needed -->
+  </div>
+
   <script src="script.js"></script>
+
+  <script>
+    let styleToggle = false;
+
+    function toggleStyle() {
+      const styleLink = document.getElementById('gameStyle');
+      styleToggle = !styleToggle;
+
+      if (styleToggle) {
+        styleLink.href = 'style2.css';
+      } else {
+        styleLink.href = 'style.css';
+      }
+    }
+  </script>
 </body>
 </html>

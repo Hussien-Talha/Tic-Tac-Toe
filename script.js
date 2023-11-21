@@ -84,3 +84,19 @@ function toggleMusic() {
   
   musicPlaying = !musicPlaying;
 }
+
+// script.js
+
+// ... (existing code)
+
+function toggleSettings() {
+  const settingsPopup = document.getElementById('settingsPopup');
+  settingsPopup.style.display = settingsPopup.style.display === 'none' ? 'block' : 'none';
+}
+
+function changeStyle() {
+  const styleLink = document.getElementById('gameStyle');
+  styleLink.href = styleLink.href === 'style.css' ? 'style2.css' : 'style.css';
+}
+
+// ... (existing code)

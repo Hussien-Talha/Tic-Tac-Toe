@@ -66,3 +66,61 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+
+#styleToggleButton {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#styleToggleButton:hover {
+  background-color: #2980b9;
+}
+
+/* Add these styles to your style.css or style2.css */
+
+#settingsButton {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #3498db; /* Blue color for consistency */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#settingsButton:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+.settings-popup {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.settings-option {
+  padding: 8px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.settings-option:hover {
+  background-color: #f2f2f2;
+}
