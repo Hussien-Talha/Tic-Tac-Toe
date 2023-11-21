@@ -11,6 +11,18 @@ body {
     color: #fff; /* White text for that extra cool vibe */
     max-width: 600px; /* Adjust as needed */
     margin: auto; /* Center on larger screens */
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
   }
   
   .cell {

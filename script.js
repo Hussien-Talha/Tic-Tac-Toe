@@ -98,3 +98,19 @@ function changeStyle() {
 function Website() {
   window.location.href = "https://hussientalha.com"; // Make sure to include the protocol (http:// or https://)
 }
+
+function showPopup() {
+  const popup = document.getElementById('popup');
+  const overlay = document.getElementById('overlay');
+
+  if (popup.style.display === 'none' || popup.style.display === '') {
+    // Show the popup and overlay
+    popup.style.display = 'block';
+    overlay.style.display = 'block';
+  } else {
+    // Hide the popup and overlay
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+  }
+}
+
