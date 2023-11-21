@@ -88,6 +88,14 @@ body {
     z-index: 999;
   }
 
+   /* Style for the buttons inside the popup */
+   .popup button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin: 5px;
+    cursor: pointer;
+  }
+
   #styleToggleButton {
     background-color: #3498db;
     color: #fff;
