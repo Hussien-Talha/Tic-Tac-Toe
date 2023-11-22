@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Tic-Tac-Toe!</title>
+  <link rel="stylesheet" type="text/css" id="gameStyle" href="index.css">
+  <script>
+    var styleToggle = false; // Add this line to define the variable
+    function toggleStyle() {
+      const styleLink = document.getElementById('gameStyle');
+      styleToggle = !styleToggle;
+  
+      if (styleToggle) {
+        styleLink.href = 'index2.css';
+      } else {
+        styleLink.href = 'index.css';
+      }
+    }
+  </script>  
+</head>
+<body>
+  <div>
+    <h1>Welcome to Tic-Tac-Toe!</h1>
+    <button onclick="startGame()">Let's Play!</button>
+  </div>
+
+  <audio id="gameMusic" src="Game-music.mp3" loop style="display:none;"></audio>
+
+  <button id="musicButton" onclick="toggleMusic()">🎵</button>
+
+  <button id="settingsButton" onclick="toggleSettings()">⚙️</button>
+
+  <div id="settingsPopup" class="settings-popup">
+    <div class="settings-option" onclick="toggleStyle()">Change Style</div>
+    <!-- Add more settings options as needed -->
+  </div>
+
+  <!-- Popup code -->
+  <div id="popup" class="popup">
+    <p>Created by Hussien Talha 2023 ©</p>
+    <p>My website:</p>
+    <button onclick="Website()">Click Here</button>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+
+<script src="index.js"></script>
+</body>
+</html>
